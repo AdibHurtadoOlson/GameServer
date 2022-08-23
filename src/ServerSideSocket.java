@@ -37,6 +37,10 @@ public class ServerSideSocket implements Runnable {
         thisId = id++;
     }
 
+    public boolean isAlive () {
+        return isAlive;
+    }
+
     public void setAlive (boolean isAlive) {
         this.isAlive = isAlive;
     }
@@ -60,10 +64,10 @@ public class ServerSideSocket implements Runnable {
             allServerData.add(receiveDataPacket);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            isAlive = false;
 
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            isAlive = false;
         }
     }
 
@@ -92,6 +96,11 @@ public class ServerSideSocket implements Runnable {
 
         while (isAlive) {
             getDataPacket();
+
+            if (!isAlive) {
+                break;
+            }
+
             processData();
         }
     }

@@ -88,12 +88,32 @@ public class Server {
         }
     }
 
+    private void removeClient (ServerSideSocket serverSideSocket) {
+        try {
+            Thread toRemove = clientThreadArrayList.remove(serverSideSocketArrayList.indexOf(serverSideSocket));
+
+            toRemove.join();
+
+            serverSideSocketArrayList.remove(serverSideSocket);
+
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
     private void createAllData2D () {
         allData = new ArrayList<>();
         allData2D = new ArrayList<>();
 
-        for (ServerSideSocket serverSideSocket : serverSideSocketArrayList) {
-            allData.add(serverSideSocket.getData());
+        for (int counter = 0; counter < serverSideSocketArrayList.size(); counter++) {
+            if (serverSideSocketArrayList.get(counter).isAlive()) {
+                allData.add(serverSideSocketArrayList.get(counter).getData());
+
+            } else {
+                removeClient(serverSideSocketArrayList.get(counter));
+                counter--;
+            }
         }
 
 
