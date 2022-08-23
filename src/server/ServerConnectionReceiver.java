@@ -1,10 +1,14 @@
+package server;
+
+import packet.DataPacket;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
-/* The purpose of the class is to sit on a Thread, waiting for a Client connection to the server to be established
- once a connection is established, it adds the Client Thread to the Server ArrrayList<Thread>
+/* The purpose of the class is to sit on a Thread, waiting for a client_network.Client connection to the server to be established
+ once a connection is established, it adds the client_network.Client Thread to the server.Server ArrrayList<Thread>
 */
 
 public class ServerConnectionReceiver implements Runnable {

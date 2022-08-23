@@ -1,3 +1,7 @@
+package server;
+
+import packet.DataPacket;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.ServerSocket;
@@ -36,7 +40,7 @@ public class Server {
     }
 
     public void start () {
-        System.out.println("Server Started");
+        System.out.println("server.Server Started");
         setUp();
         run();
     }
@@ -139,7 +143,7 @@ public class Server {
         System.out.println("----------");
     }
 
-    // Takes the allData2D ArrayList, and sends the correct ArrayList to the given ServerSideSocket
+    // Takes the allData2D ArrayList, and sends the correct ArrayList to the given server.ServerSideSocket
     private void processConnections () {
         if (serverSideSocketArrayList != null && serverSideSocketArrayList.size() != 0) {
             for (int counter = 0; counter < serverSideSocketArrayList.size(); counter++) {

@@ -1,8 +1,13 @@
+package client_network;
+
+import packet.DataPacket;
+import packet.StringObj;
+
 import java.util.ArrayList;
 
 /*
-This class is a Client. Normally, this is where the client's game instance would be. The only necessary functions
-are the setClientConnectionReceiver (to tie the ClientConnectionReceiver to this client) and the run method
+This class is a client_network.Client. Normally, this is where the client's game instance would be. The only necessary functions
+are the setClientConnectionReceiver (to tie the client_network.ClientConnectionReceiver to this client) and the run method
 created through the Runnable interface
  */
 

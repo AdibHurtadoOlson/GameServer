@@ -1,8 +1,13 @@
+package client_network;
+
+import client_network.Client;
+import client_network.ClientConnectionReceiver;
+
 import java.util.ArrayList;
 
 /*
-This class serves as the start for the Client, it creates a Client and, as of now, creates a separate
-ClientConnectionReceiver, and ties it to the Client
+This class serves as the start for the client_network.Client, it creates a client_network.Client and, as of now, creates a separate
+client_network.ClientConnectionReceiver, and ties it to the client_network.Client
  */
 
 public class ClientMain {

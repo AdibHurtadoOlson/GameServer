@@ -1,6 +1,8 @@
-/*
-This class is the one that starts the Server
+package server;/*
+This class is the one that starts the server.Server
  */
+
+import server.Server;
 
 public class ServerMain {
     public static void main(String[] args) {

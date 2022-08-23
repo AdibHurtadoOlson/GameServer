@@ -1,3 +1,8 @@
+package client_network;
+
+import packet.DataObject;
+import packet.DataPacket;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;

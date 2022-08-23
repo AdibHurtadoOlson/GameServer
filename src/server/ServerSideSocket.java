@@ -1,8 +1,11 @@
+package server;
+
+import packet.DataPacket;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.net.SocketException;
 import java.util.ArrayList;
 
 /* The purpose of this class is to act as the in-between for the server and client connection. This class takes in
